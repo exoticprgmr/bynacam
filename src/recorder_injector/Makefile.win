@@ -1,0 +1,33 @@
+# Project: bynacam_injector
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = bynacam_injector_private.res
+OBJ  = main.o $(RES)
+LINKOBJ  = main.o $(RES)
+LIBS =  -L"C:/Program Files (x86)/Dev-Cpp/Lib" -mwindows  -s 
+INCS =  -I"C:/Program Files (x86)/Dev-Cpp/Include" 
+CXXINCS =  -I"C:/Program Files (x86)/Dev-Cpp/lib/gcc/mingw32/3.4.5/include"  -I"C:/Program Files (x86)/Dev-Cpp/include/c++/3.4.5/backward"  -I"C:/Program Files (x86)/Dev-Cpp/include/c++/3.4.5/mingw32"  -I"C:/Program Files (x86)/Dev-Cpp/include/c++/3.4.5"  -I"C:/Program Files (x86)/Dev-Cpp/include"  -I"C:/Program Files (x86)/Dev-Cpp/"  -I"C:/Program Files (x86)/Dev-Cpp/include/common/wx/msw"  -I"C:/Program Files (x86)/Dev-Cpp/include/common/wx/generic"  -I"C:/Program Files (x86)/Dev-Cpp/include/common/wx/html"  -I"C:/Program Files (x86)/Dev-Cpp/include/common/wx/protocol"  -I"C:/Program Files (x86)/Dev-Cpp/include/common/wx/xml"  -I"C:/Program Files (x86)/Dev-Cpp/include/common/wx/xrc"  -I"C:/Program Files (x86)/Dev-Cpp/include/common/wx"  -I"C:/Program Files (x86)/Dev-Cpp/include/common" 
+BIN  = bynacam.exe
+CXXFLAGS = $(CXXINCS)   -fexpensive-optimizations -O3
+CFLAGS = $(INCS)   -fexpensive-optimizations -O3
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before bynacam.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "bynacam.exe" $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+bynacam_injector_private.res: bynacam_injector_private.rc 
+	$(WINDRES) -i bynacam_injector_private.rc --input-format=rc -o bynacam_injector_private.res -O coff 

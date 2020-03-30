@@ -1,0 +1,109 @@
+# Project: bynacam_reloaded_86
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = bynacam_reloaded_86_private.res
+OBJ  = core.o dllmain.o file.o mappacket.o md5.o networkmessage.o LZMA/7zBuf.o LZMA/7zBuf2.o LZMA/7zCrc.o LZMA/7zFile.o LZMA/7zStream.o LZMA/Alloc.o LZMA/Bcj2.o LZMA/Bra.o LZMA/Bra86.o LZMA/BraIA64.o LZMA/LzFind.o LZMA/LzFindMt.o LZMA/Lzma86Dec.o LZMA/Lzma86Enc.o LZMA/LzmaDec.o LZMA/LzmaEnc.o LZMA/LzmaLib.o LZMA/LzmaUtil.o LZMA/Threads.o $(RES)
+LINKOBJ  = core.o dllmain.o file.o mappacket.o md5.o networkmessage.o LZMA/7zBuf.o LZMA/7zBuf2.o LZMA/7zCrc.o LZMA/7zFile.o LZMA/7zStream.o LZMA/Alloc.o LZMA/Bcj2.o LZMA/Bra.o LZMA/Bra86.o LZMA/BraIA64.o LZMA/LzFind.o LZMA/LzFindMt.o LZMA/Lzma86Dec.o LZMA/Lzma86Enc.o LZMA/LzmaDec.o LZMA/LzmaEnc.o LZMA/LzmaLib.o LZMA/LzmaUtil.o LZMA/Threads.o $(RES)
+LIBS =  -L"C:/Program Files (x86)/Dev-Cpp/Lib" --no-export-all-symbols --add-stdcall-alias -lcomdlg32 -lshlwapi  -s 
+INCS =  -I"C:/Program Files (x86)/Dev-Cpp/Include" 
+CXXINCS =  -I"C:/Program Files (x86)/Dev-Cpp/lib/gcc/mingw32/3.4.5/include"  -I"C:/Program Files (x86)/Dev-Cpp/include/c++/3.4.5/backward"  -I"C:/Program Files (x86)/Dev-Cpp/include/c++/3.4.5/mingw32"  -I"C:/Program Files (x86)/Dev-Cpp/include/c++/3.4.5"  -I"C:/Program Files (x86)/Dev-Cpp/include"  -I"C:/Program Files (x86)/Dev-Cpp/"  -I"C:/Program Files (x86)/Dev-Cpp/include/common/wx/msw"  -I"C:/Program Files (x86)/Dev-Cpp/include/common/wx/generic"  -I"C:/Program Files (x86)/Dev-Cpp/include/common/wx/html"  -I"C:/Program Files (x86)/Dev-Cpp/include/common/wx/protocol"  -I"C:/Program Files (x86)/Dev-Cpp/include/common/wx/xml"  -I"C:/Program Files (x86)/Dev-Cpp/include/common/wx/xrc"  -I"C:/Program Files (x86)/Dev-Cpp/include/common/wx"  -I"C:/Program Files (x86)/Dev-Cpp/include/common" 
+BIN  = bynacam.dll
+CXXFLAGS = $(CXXINCS) -DBUILDING_DLL=1   -fexpensive-optimizations -O3
+CFLAGS = $(INCS) -DBUILDING_DLL=1   -fexpensive-optimizations -O3
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before bynacam.dll all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+DLLWRAP=dllwrap.exe
+DEFFILE=libbynacam.def
+STATICLIB=libbynacam.a
+
+$(BIN): $(LINKOBJ)
+	$(DLLWRAP) --output-def $(DEFFILE) --driver-name c++ --implib $(STATICLIB) $(LINKOBJ) $(LIBS) -o $(BIN)
+
+core.o: core.cpp
+	$(CPP) -c core.cpp -o core.o $(CXXFLAGS)
+
+dllmain.o: dllmain.cpp
+	$(CPP) -c dllmain.cpp -o dllmain.o $(CXXFLAGS)
+
+file.o: file.cpp
+	$(CPP) -c file.cpp -o file.o $(CXXFLAGS)
+
+mappacket.o: mappacket.cpp
+	$(CPP) -c mappacket.cpp -o mappacket.o $(CXXFLAGS)
+
+md5.o: md5.cpp
+	$(CPP) -c md5.cpp -o md5.o $(CXXFLAGS)
+
+networkmessage.o: networkmessage.cpp
+	$(CPP) -c networkmessage.cpp -o networkmessage.o $(CXXFLAGS)
+
+LZMA/7zBuf.o: LZMA/7zBuf.c
+	$(CPP) -c LZMA/7zBuf.c -o LZMA/7zBuf.o $(CXXFLAGS)
+
+LZMA/7zBuf2.o: LZMA/7zBuf2.c
+	$(CPP) -c LZMA/7zBuf2.c -o LZMA/7zBuf2.o $(CXXFLAGS)
+
+LZMA/7zCrc.o: LZMA/7zCrc.c
+	$(CPP) -c LZMA/7zCrc.c -o LZMA/7zCrc.o $(CXXFLAGS)
+
+LZMA/7zFile.o: LZMA/7zFile.c
+	$(CPP) -c LZMA/7zFile.c -o LZMA/7zFile.o $(CXXFLAGS)
+
+LZMA/7zStream.o: LZMA/7zStream.c
+	$(CPP) -c LZMA/7zStream.c -o LZMA/7zStream.o $(CXXFLAGS)
+
+LZMA/Alloc.o: LZMA/Alloc.c
+	$(CPP) -c LZMA/Alloc.c -o LZMA/Alloc.o $(CXXFLAGS)
+
+LZMA/Bcj2.o: LZMA/Bcj2.c
+	$(CPP) -c LZMA/Bcj2.c -o LZMA/Bcj2.o $(CXXFLAGS)
+
+LZMA/Bra.o: LZMA/Bra.c
+	$(CPP) -c LZMA/Bra.c -o LZMA/Bra.o $(CXXFLAGS)
+
+LZMA/Bra86.o: LZMA/Bra86.c
+	$(CPP) -c LZMA/Bra86.c -o LZMA/Bra86.o $(CXXFLAGS)
+
+LZMA/BraIA64.o: LZMA/BraIA64.c
+	$(CPP) -c LZMA/BraIA64.c -o LZMA/BraIA64.o $(CXXFLAGS)
+
+LZMA/LzFind.o: LZMA/LzFind.c
+	$(CPP) -c LZMA/LzFind.c -o LZMA/LzFind.o $(CXXFLAGS)
+
+LZMA/LzFindMt.o: LZMA/LzFindMt.c
+	$(CPP) -c LZMA/LzFindMt.c -o LZMA/LzFindMt.o $(CXXFLAGS)
+
+LZMA/Lzma86Dec.o: LZMA/Lzma86Dec.c
+	$(CPP) -c LZMA/Lzma86Dec.c -o LZMA/Lzma86Dec.o $(CXXFLAGS)
+
+LZMA/Lzma86Enc.o: LZMA/Lzma86Enc.c
+	$(CPP) -c LZMA/Lzma86Enc.c -o LZMA/Lzma86Enc.o $(CXXFLAGS)
+
+LZMA/LzmaDec.o: LZMA/LzmaDec.c
+	$(CPP) -c LZMA/LzmaDec.c -o LZMA/LzmaDec.o $(CXXFLAGS)
+
+LZMA/LzmaEnc.o: LZMA/LzmaEnc.c
+	$(CPP) -c LZMA/LzmaEnc.c -o LZMA/LzmaEnc.o $(CXXFLAGS)
+
+LZMA/LzmaLib.o: LZMA/LzmaLib.c
+	$(CPP) -c LZMA/LzmaLib.c -o LZMA/LzmaLib.o $(CXXFLAGS)
+
+LZMA/LzmaUtil.o: LZMA/LzmaUtil.c
+	$(CPP) -c LZMA/LzmaUtil.c -o LZMA/LzmaUtil.o $(CXXFLAGS)
+
+LZMA/Threads.o: LZMA/Threads.c
+	$(CPP) -c LZMA/Threads.c -o LZMA/Threads.o $(CXXFLAGS)
+
+bynacam_reloaded_86_private.res: bynacam_reloaded_86_private.rc 
+	$(WINDRES) -i bynacam_reloaded_86_private.rc --input-format=rc -o bynacam_reloaded_86_private.res -O coff 

@@ -1,0 +1,35 @@
+/* THIS FILE WILL BE OVERWRITTEN BY DEV-C++ */
+/* DO NOT EDIT! */
+
+#include <windows.h> // include for version info constants
+
+
+//
+// TO CHANGE VERSION INFORMATION, EDIT PROJECT OPTIONS...
+//
+1 VERSIONINFO
+FILEVERSION 2,0,0,0
+PRODUCTVERSION 2,0,0,0
+FILETYPE VFT_DLL
+{
+  BLOCK "StringFileInfo"
+	 {
+		 BLOCK "080904E4"
+		 {
+			 VALUE "CompanyName", "ex0ticprgmr"
+			 VALUE "FileVersion", "BynaCam Reloaded v2"
+			 VALUE "FileDescription", "BynaCam DLL for Tibia 8.6"
+			 VALUE "InternalName", "bynacam.dll"
+			 VALUE "LegalCopyright", "ex0ticprgmr & beziak"
+			 VALUE "LegalTrademarks", ""
+			 VALUE "OriginalFilename", "bynacam.dll"
+			 VALUE "ProductName", "BynaCam for Tibia 8.6"
+			 VALUE "ProductVersion", "v2"
+		 }
+	 }
+  BLOCK "VarFileInfo"
+	 {
+		 VALUE "Translation", 0x0809, 1252
+	 }
+}
+

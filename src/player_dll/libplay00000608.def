@@ -1,0 +1,4 @@
+; dlltool --base-file C:\Users\user\AppData\Local\Temp/cca00556.base --output-exp play00000608.exp --dllname play00000608.dll --output-def libplay00000608.def --no-export-all-symbols --add-stdcall-alias --exclude-symbol=DllMainCRTStartup@12 --def C:\Users\user\AppData\Local\Temp/cca00556.def --output-lib libplay00000608.a
+EXPORTS
+	getmcvalue @ 1
+	getmcaddr @ 2
