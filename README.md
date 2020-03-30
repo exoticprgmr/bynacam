@@ -11,6 +11,6 @@ Features:
   And many more... ! :)
 
 exoticprgmr 2020
-beziak 2010-2012
+beziak 2007-2012
 
 ./Public domain
