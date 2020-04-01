@@ -102,7 +102,7 @@ int FileHandler::Close()
         MessageBox(GetForegroundWindow(), "Unable to save file in specified location!\r\nIf you are using Windows Vista or later turn off UAC\r\nor try to save file in different (non-protected) location.", PROGRAM_NAME, MB_OK | MB_ICONINFORMATION);
         return 0;
     }
-    numOfPackets += 0x39 - 1;
+    numOfPackets += 0x39;
     const unsigned char* containerData = (const unsigned char*)fData.c_str();
     unsigned int containerOffset = fData.length();
     *(unsigned int*)&containerData[2] = numOfPackets;
